@@ -1,0 +1,13 @@
+site_web:
+    resource: "@SiteWebBundle/Controller/"
+    type:     annotation
+    
+
+admin:
+    resource: "@AdminBundle/Controller/"
+    type:     annotation
+   
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

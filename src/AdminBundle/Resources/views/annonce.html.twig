@@ -1,0 +1,41 @@
+{% extends "AdminBundle::home.html.twig"%}
+{%block style %}<link rel="stylesheet" href="{{ asset('bundles/framework/css/annonce.css') }}" type="text/css" media="all" />{%endblock%}
+         
+{% block annonces %}
+    
+     
+    <body>
+        
+        <h1 class="page-header">Annonces</h1>
+       <div class="container">
+            <a class="add-work" href="{{path("form")}}"><h3>Ajouter une annonce</h3> </a>
+            </div>
+        {% for annonce in annonces%}
+            <div class="form-web">
+     <div class="container">
+            <div class="row">
+  <div class="col-sm-6 col-md-6 col-md-offset-4">
+    <div class="thumbnail">
+         
+            <p>{{annonce.Titre}}</p>
+            <p>{{annonce.Image}}</p>
+            <p>{{annonce.Description}}</p>
+            <p>{{annonce.Prix}}</p>
+            <p>{{annonce.Vendeur}}</p>
+            <p>{{annonce.DateParution}}</p>
+            <p>{{annonce.Telephone}}</p>
+            <p>{{annonce.Categorie}}</p>
+            <p>{{annonce.Localite}}</p>
+            </div>
+            </div>
+            </div>
+            <div class="btn-projet">
+            <a class="edit" href="{{path("edit",{"id":annonce.id})}}">Editer une annonce</a>
+             <a class="delate" href="{{path("delate",{"id":annonce.id})}}">Supprimer une annonce</a>
+             </div>
+             </div>
+            {% endfor %}
+             
+    </body>
+    {% endblock %}
+    

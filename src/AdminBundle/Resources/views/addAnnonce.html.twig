@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Nouvelle annonce</title>
+        <link rel="stylesheet" href="{{ asset('bundles/vendors/bootstrap/css/bootstrap.css') }}" type="text/css" media="all" />
+        <link rel="stylesheet" href="{{ asset('bundles/framework/css/annonce.css') }}" type="text/css" media="all" />
+    </head>
+    <body>
+        
+        <div class="container">
+{% if id is defined%}
+{{form_start(formNews,{'attr':{'action':path('update',{'id':id})}})}}
+{% else%}
+    {{form_start(formNews,{'attr':{'action':path('valid')}})}}
+  {% endif%}
+        
+        {{form_rest(formNews)}}
+        
+        {{form_end(formNews)}}
+    </div>
+    </body>
+
+</html>
